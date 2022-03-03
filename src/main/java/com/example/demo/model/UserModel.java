@@ -22,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "tbl_user")
-
 public class UserModel {
 
 	@Id

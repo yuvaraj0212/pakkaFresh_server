@@ -41,10 +41,10 @@ public class FileStorageService extends ExceptionController{
 	@Value("${file.upload-dir}")
 	String filepath;
 
-	private final String endpointUrl="https://s3.ap-south-1.amazonaws.com";
-	private final String bucketName="pandiyanimages";
-	 private String accessKey ="AKIA5YUW2VZ5MHF4RXW3";
-	 private String secretKey="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";
+	private final String endpointUrl="https://pandiyanstore.s3.ap-south-1.amazonaws.com";
+	private final String bucketName="pandiyanstore";
+	 private String accessKey ="AKIA2RJHWFHFDKQY6T5I";
+	 private String secretKey="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";
 	 
 	 
 	  private AmazonS3 s3client;
@@ -150,7 +150,7 @@ public class FileStorageService extends ExceptionController{
 		        try {
 		            File file = convertMultiPartToFile(multipartFile);
 		            String fileName = generateFileName(multipartFile);
-		            fileUrl = endpointUrl + "/" + bucketName + "/"+folderName+"/" + fileName;
+		            fileUrl = endpointUrl + "/" +folderName+"/"+ fileName;
 		            uploadFileTos3bucket(fileName, file,folderName);
 		            file.delete();
 		        } catch (Exception e) {
